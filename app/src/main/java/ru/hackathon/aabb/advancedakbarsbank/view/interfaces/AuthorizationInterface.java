@@ -8,4 +8,6 @@ public interface AuthorizationInterface {
     void setAccountAuthorization();
     void setCodeAuthorization();
     void setFingerprintAuthorization();
+    void showError(String errorMsg);
+    void success();
 }
