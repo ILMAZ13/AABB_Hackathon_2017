@@ -18,6 +18,9 @@ public class AuthorizationActivity extends AppCompatActivity implements Authoriz
 
         //Presenter generation
         mAuthorizationPresenter = new Authorization(this);
+        if(savedInstanceState == null){
+            mAuthorizationPresenter.getAuthorizationType();
+        }
     }
 
     @Override
