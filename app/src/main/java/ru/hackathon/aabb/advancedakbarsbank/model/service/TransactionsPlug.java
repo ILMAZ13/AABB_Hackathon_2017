@@ -18,7 +18,7 @@ public class TransactionsPlug {
         SimpleTransactionGetting secondTransactionGetting = new SimpleTransactionGetting();
         secondTransactionGetting.setTransactionName("friend's payment");
         secondTransactionGetting.setCost(1000);
-        firstTransactionGetting.setTransactionDateAndTime(new java.sql.Timestamp(System.currentTimeMillis()));
+        secondTransactionGetting.setTransactionDateAndTime(new java.sql.Timestamp(System.currentTimeMillis()));
 
         transactions.add(firstTransactionGetting);
         transactions.add(secondTransactionGetting);
