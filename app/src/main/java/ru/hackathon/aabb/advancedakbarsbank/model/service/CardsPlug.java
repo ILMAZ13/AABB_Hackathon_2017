@@ -7,13 +7,19 @@ import java.util.Date;
 import java.util.List;
 
 public class CardsPlug {
-    List<Card> getCards(){
+    List<Card> getCards() {
         List<Card> cards = new ArrayList<>();
 
         Card card = new Card();
         card.setCardNumber(1234123412341234L);
         card.setExpirationDate(new Date());
         card.setCvv(321);
+
+        TransactionsPlug transactionsPlug = new TransactionsPlug();
+
+        card.setTransactionList(transactionsPlug.getTransactions());
+        
+
         return cards;
     }
 
