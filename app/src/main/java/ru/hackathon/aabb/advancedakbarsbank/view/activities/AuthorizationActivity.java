@@ -1,5 +1,6 @@
 package ru.hackathon.aabb.advancedakbarsbank.view.activities;
 
+import android.app.DialogFragment;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.LinearLayout;
 
 import ru.hackathon.aabb.advancedakbarsbank.R;
 import ru.hackathon.aabb.advancedakbarsbank.presenter.Authorization;
+import ru.hackathon.aabb.advancedakbarsbank.view.dialogFragments.ErrorDialog;
 import ru.hackathon.aabb.advancedakbarsbank.view.interfaces.AuthorizationInterface;
 
 import static ru.hackathon.aabb.advancedakbarsbank.R.id.ll_account;
@@ -24,6 +26,8 @@ public class AuthorizationActivity extends AppCompatActivity implements Authoriz
     private EditText mETCode;
     private LinearLayout mCodeLinearLayout;
     private Button mButtonCodeSend;
+
+    private DialogFragment mErrorDialogFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,9 +57,9 @@ public class AuthorizationActivity extends AppCompatActivity implements Authoriz
             }
         });
 
-        if(savedInstanceState == null){
-            mAuthorizationPresenter.getAuthorizationType();
-        }
+        mErrorDialogFragment = new ErrorDialog();
+
+        mAuthorizationPresenter.getAuthorizationType();
     }
 
     @Override
@@ -75,7 +79,7 @@ public class AuthorizationActivity extends AppCompatActivity implements Authoriz
 
     @Override
     public void showError(String errorMsg) {
-
+        mErrorDialogFragment.show(getFragmentManager(),"error");
     }
 
     @Override
