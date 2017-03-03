@@ -8,12 +8,21 @@ import java.util.Date;
 import java.util.List;
 
 public class Card {
+    private String cardName;
     private long cardNumber;
     private Date expirationDate;
     private int cvv;
     private List<Transaction> transactionList;
     private List<Payment> paymentList;
     private List<SimpleTransactionGetting> gettingList;
+
+    public void setCardName(String cardName) {
+        this.cardName = cardName;
+    }
+
+    public String getCardName() {
+        return cardName;
+    }
 
     public List<SimpleTransactionGetting> getGettingList() {
         return gettingList;

@@ -13,11 +13,13 @@ public class CardsPlug {
 
         Card firstCard = new Card();
         Card secondCard = new Card();
+        firstCard.setCardName("MasterCard");
         firstCard.setCardNumber(1234123412341234L);
         firstCard.setExpirationDate(new Date());
         firstCard.setCvv(321);
         firstCard.setTransactionList(transactionsPlug.getTransactions());
 
+        firstCard.setCardName("Visa");
         secondCard.setCardNumber(2313232123123213L);
         secondCard.setExpirationDate(new Date());
         secondCard.setCvv(133);
