@@ -9,16 +9,23 @@ import java.util.List;
 public class CardsPlug {
     List<Card> getCards() {
         List<Card> cards = new ArrayList<>();
-
-        Card card = new Card();
-        card.setCardNumber(1234123412341234L);
-        card.setExpirationDate(new Date());
-        card.setCvv(321);
-
         TransactionsPlug transactionsPlug = new TransactionsPlug();
 
-        card.setTransactionList(transactionsPlug.getTransactions());
-        
+        Card firstCard = new Card();
+        Card secondCard = new Card();
+        firstCard.setCardNumber(1234123412341234L);
+        firstCard.setExpirationDate(new Date());
+        firstCard.setCvv(321);
+        firstCard.setTransactionList(transactionsPlug.getTransactions());
+
+        secondCard.setCardNumber(2313232123123213L);
+        secondCard.setExpirationDate(new Date());
+        secondCard.setCvv(133);
+        secondCard.setTransactionList(transactionsPlug.getTransactions());
+
+
+        cards.add(firstCard);
+        cards.add(secondCard);
 
         return cards;
     }
