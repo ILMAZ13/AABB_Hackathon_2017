@@ -33,7 +33,7 @@ public class Authorization {
     }
 
     public void authorizeByAccount(String login, String password) {
-        if (plug.authorize(login,password)){
+        if (plug.authorizeByData(login,password)){
             mInterface.success();
         } else {
             mInterface.showError("Invalid data");
@@ -41,6 +41,10 @@ public class Authorization {
     }
 
     public void authorizeByCode(String code){
-
+        if (plug.authorizeByCode(code)) {
+            mInterface.success();
+        } else {
+            mInterface.showError("Invalid code");
+        }
     }
 }
