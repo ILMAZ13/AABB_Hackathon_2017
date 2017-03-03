@@ -22,7 +22,7 @@ public class TransactionsPresenter {
         trunsactionAndPaymentListUpdate();
         for ( Payment payment: paymentsList) {
             if(payment.getPaymentTypeEnum().equals(paymentType)){
-                summ+=payment.getMoney();
+                summ+=payment.getCost();
             }
         }
         return summ;
@@ -39,7 +39,7 @@ public class TransactionsPresenter {
         for (Payment payment:paymentsList) {
             if( payment.getTransactionDateAndTime().getTimestamp().getMonth() == month &&
                     payment.getTransactionDateAndTime().getTimestamp().getYear()==year){
-                paymentSumm+=payment.getMoney();
+                paymentSumm+=payment.getCost();
             }
         }
     }
