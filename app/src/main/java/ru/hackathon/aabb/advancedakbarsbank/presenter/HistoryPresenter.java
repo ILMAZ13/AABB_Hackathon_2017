@@ -10,7 +10,7 @@ import java.util.List;
  * Created by ILMAZ on 04.03.2017.
  */
 
-public class StoryPresenter {
+public class HistoryPresenter {
     private StoryFragmentInterface mInterface;
 
     public void getTransactionList (){
@@ -18,7 +18,7 @@ public class StoryPresenter {
         List<Transaction> transactions = plug.getTransactions();
         mInterface.setTransactionsList(transactions);
     }
-    public StoryPresenter(StoryFragmentInterface anInterface) {
+    public HistoryPresenter(StoryFragmentInterface anInterface) {
         mInterface = anInterface;
     }
 }
