@@ -72,4 +72,14 @@ public class AuthorizationActivity extends AppCompatActivity implements Authoriz
     public void setFingerprintAuthorization() {
 
     }
+
+    @Override
+    public void showError(String errorMsg) {
+
+    }
+
+    @Override
+    public void success() {
+
+    }
 }
