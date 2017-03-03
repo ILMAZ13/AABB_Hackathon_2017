@@ -21,6 +21,10 @@ public class AuthorizationActivity extends AppCompatActivity implements Authoriz
     private Button mButtonSend;
     private LinearLayout mAccountLinearLayout;
 
+    private EditText mETCode;
+    private LinearLayout mCodeLinearLayout;
+    private Button mButtonCodeSend;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,9 +32,6 @@ public class AuthorizationActivity extends AppCompatActivity implements Authoriz
 
         //Presenter generation
         mAuthorizationPresenter = new Authorization(this);
-        if(savedInstanceState == null){
-            mAuthorizationPresenter.getAuthorizationType();
-        }
         mAccountLinearLayout = (LinearLayout) findViewById(ll_account);
         mETLogin = (EditText) findViewById(R.id.et_login);
         mETPassword = (EditText) findViewById(R.id.et_password);
@@ -41,6 +42,20 @@ public class AuthorizationActivity extends AppCompatActivity implements Authoriz
                 mAuthorizationPresenter.authorizeByAccount(mETLogin.getText().toString(), mETPassword.getText().toString());
             }
         });
+
+        mETCode = (EditText) findViewById(R.id.et_code);
+        mCodeLinearLayout = (LinearLayout) findViewById(R.id.ll_code);
+        mButtonCodeSend = (Button) findViewById(R.id.btn_send_code);
+        mButtonCodeSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAuthorizationPresenter.authorizeByCode(mETCode.getText().toString());
+            }
+        });
+
+        if(savedInstanceState == null){
+            mAuthorizationPresenter.getAuthorizationType();
+        }
     }
 
     @Override
@@ -50,7 +65,7 @@ public class AuthorizationActivity extends AppCompatActivity implements Authoriz
 
     @Override
     public void setCodeAuthorization() {
-
+        mCodeLinearLayout.setVisibility(View.VISIBLE);
     }
 
     @Override
