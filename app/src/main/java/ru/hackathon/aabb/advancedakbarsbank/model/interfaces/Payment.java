@@ -1,11 +1,15 @@
 package ru.hackathon.aabb.advancedakbarsbank.model.interfaces;
 
 
-import ru.hackathon.aabb.advancedakbarsbank.model.Enums.PaymentTypeEnum;
+import ru.hackathon.aabb.advancedakbarsbank.model.enums.PaymentTypeEnum;
+import ru.hackathon.aabb.advancedakbarsbank.model.enums.TransactionTypeEnum;
 
 public abstract class Payment extends Transaction {
     private PaymentTypeEnum paymentTypeEnum;
-    private int cost;
+
+    public Payment(){
+        setTransactionTypeEnum(TransactionTypeEnum.PAYMENT);
+    }
 
     public PaymentTypeEnum getPaymentTypeEnum() {
         return paymentTypeEnum;
@@ -15,11 +19,4 @@ public abstract class Payment extends Transaction {
         this.paymentTypeEnum = paymentTypeEnum;
     }
 
-    public int getCost() {
-        return cost;
-    }
-
-    public void setCost(int cost) {
-        this.cost = cost;
-    }
 }
