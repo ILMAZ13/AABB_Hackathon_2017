@@ -1,8 +1,8 @@
 package ru.hackathon.aabb.advancedakbarsbank.model.interfaces;
 
 
-import ru.hackathon.aabb.advancedakbarsbank.model.Enums.PaymentTypeEnum;
-import ru.hackathon.aabb.advancedakbarsbank.model.Enums.TransactionTypeEnum;
+import ru.hackathon.aabb.advancedakbarsbank.model.enums.PaymentTypeEnum;
+import ru.hackathon.aabb.advancedakbarsbank.model.enums.TransactionTypeEnum;
 
 public abstract class Payment extends Transaction {
     private PaymentTypeEnum paymentTypeEnum;

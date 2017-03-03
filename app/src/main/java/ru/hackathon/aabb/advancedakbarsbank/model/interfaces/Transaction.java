@@ -1,6 +1,6 @@
 package ru.hackathon.aabb.advancedakbarsbank.model.interfaces;
 
-import ru.hackathon.aabb.advancedakbarsbank.model.Enums.TransactionTypeEnum;
+import ru.hackathon.aabb.advancedakbarsbank.model.enums.TransactionTypeEnum;
 
 import java.security.Timestamp;
 
