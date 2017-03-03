@@ -73,6 +73,7 @@ public class HomeCardViewHolder extends RecyclerView.ViewHolder {
                 dataPoints[i] = new DataPoint(new java.sql.Date(t.getTransactionDateAndTime().getTime()), cardResourses + t.getCost());
             i++;
         }
+
         LineGraphSeries<DataPoint> series = new LineGraphSeries<>(dataPoints);
         graph.addSeries(series);
         graph.getViewport().setScrollable(true); // enables horizontal scrolling
