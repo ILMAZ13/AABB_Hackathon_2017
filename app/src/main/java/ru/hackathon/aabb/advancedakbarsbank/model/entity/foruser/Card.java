@@ -15,6 +15,15 @@ public class Card {
     private List<Transaction> transactionList;
     private List<Payment> paymentList;
     private List<SimpleTransactionGetting> gettingList;
+    private long resources;
+
+    public void setResources(long resources) {
+        this.resources = resources;
+    }
+
+    public long getResources() {
+        return resources;
+    }
 
     public void setCardName(String cardName) {
         this.cardName = cardName;

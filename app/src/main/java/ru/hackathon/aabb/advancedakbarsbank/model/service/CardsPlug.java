@@ -18,13 +18,14 @@ public class CardsPlug {
         firstCard.setExpirationDate(new Date());
         firstCard.setCvv(321);
         firstCard.setTransactionList(transactionsPlug.getTransactions());
+        firstCard.setResources(43000);
 
-        firstCard.setCardName("Visa");
+        secondCard.setCardName("Visa");
         secondCard.setCardNumber(2313232123123213L);
         secondCard.setExpirationDate(new Date());
         secondCard.setCvv(133);
         secondCard.setTransactionList(transactionsPlug.getTransactions());
-
+        secondCard.setResources(12000);
 
         cards.add(firstCard);
         cards.add(secondCard);
