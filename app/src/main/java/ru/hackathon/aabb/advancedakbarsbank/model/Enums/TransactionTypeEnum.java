@@ -1,4 +1,4 @@
-package ru.hackathon.aabb.advancedakbarsbank.model.Enums;
+package ru.hackathon.aabb.advancedakbarsbank.model.enums;
 
 public enum TransactionTypeEnum {
     GETTING, PAYMENT

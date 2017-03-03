@@ -1,6 +1,6 @@
 package ru.hackathon.aabb.advancedakbarsbank.presenter;
 
-import ru.hackathon.aabb.advancedakbarsbank.model.Enums.AuthorizationType;
+import ru.hackathon.aabb.advancedakbarsbank.model.enums.AuthorizationType;
 import ru.hackathon.aabb.advancedakbarsbank.view.interfaces.AuthorizationInterface;
 
 /**
