@@ -18,7 +18,7 @@ public class Authorization {
 
     public void getAuthorizationType() {
         // TODO: 03.03.2017 add request to model
-        AuthorizationType authorizationType = AuthorizationType.CODE;
+        AuthorizationType authorizationType = AuthorizationType.ACCOUNT;
         switch (authorizationType) {
             case ACCOUNT:
                 mInterface.setAccountAuthorization();
@@ -38,5 +38,9 @@ public class Authorization {
         } else {
             mInterface.showError("Invalid data");
         }
+    }
+
+    public void authorizeByCode(String code){
+
     }
 }
