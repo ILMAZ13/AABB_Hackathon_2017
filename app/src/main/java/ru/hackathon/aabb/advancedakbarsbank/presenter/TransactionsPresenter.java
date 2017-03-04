@@ -37,8 +37,8 @@ public class TransactionsPresenter {
     private void updatePaymentSum(int month, int year){ //0-11 month
         paymentSumm = 0;
         for (Payment payment:paymentsList) {
-            if( payment.getTransactionDateAndTime().getTimestamp().getMonth() == month &&
-                    payment.getTransactionDateAndTime().getTimestamp().getYear()==year){
+            if( payment.getTransactionDateAndTime().getMonth() == month &&
+                    payment.getTransactionDateAndTime().getYear()==year){
                 paymentSumm+=payment.getCost();
             }
         }

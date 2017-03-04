@@ -19,10 +19,7 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    Fragment fragment = HomeFragment.newInstance();
-                    getFragmentManager().beginTransaction()
-                            .replace(R.id.content, fragment)
-                            .commit();
+                    selectHomePage();
                     return true;
                 case R.id.navigation_dashboard:
 
@@ -36,6 +33,13 @@ public class MainActivity extends AppCompatActivity {
 
     };
 
+    private void selectHomePage() {
+        Fragment fragment = HomeFragment.newInstance();
+        getFragmentManager().beginTransaction()
+                .replace(R.id.content, fragment)
+                .commit();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navigation.setSelected(true);
+        selectHomePage();
     }
 
 }
