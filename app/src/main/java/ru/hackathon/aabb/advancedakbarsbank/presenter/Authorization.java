@@ -18,7 +18,7 @@ public class Authorization {
 
     public void getAuthorizationType() {
         // TODO: 03.03.2017 add request to model
-        AuthorizationType authorizationType = AuthorizationType.ACCOUNT;
+        AuthorizationType authorizationType = AuthorizationType.CODE;
         switch (authorizationType) {
             case ACCOUNT:
                 mInterface.setAccountAuthorization();

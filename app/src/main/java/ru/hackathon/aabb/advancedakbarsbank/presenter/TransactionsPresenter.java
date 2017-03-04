@@ -14,12 +14,12 @@ public class TransactionsPresenter {
     private long paymentSumm;
 
     public TransactionsPresenter(){
-        paymentListUpdate();
+        trunsactionAndPaymentListUpdate();
     }
 
     public long getPaymentSumm(PaymentTypeEnum paymentType){
         int summ=0;
-        paymentListUpdate();
+        trunsactionAndPaymentListUpdate();
         for ( Payment payment: paymentsList) {
             if(payment.getPaymentTypeEnum().equals(paymentType)){
                 summ+=payment.getMoney();
@@ -28,13 +28,13 @@ public class TransactionsPresenter {
         return summ;
     }
 
-    private void paymentListUpdate(){
+    private void trunsactionAndPaymentListUpdate(){
         transactionList = service.getTransactions();
         paymentsList = service.getPayments();
 
     }
 
-    private void updatePaymentSum(int month, int year){
+    private void updatePaymentSum(int month, int year){ //0-11 month
         paymentSumm = 0;
         for (Payment payment:paymentsList) {
             if( payment.getTransactionDateAndTime().getTimestamp().getMonth() == month &&
