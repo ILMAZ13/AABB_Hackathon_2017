@@ -4,16 +4,25 @@
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/title_home"/>
+        android:title="Главная"/>
 
     <item
         android:id="@+id/navigation_dashboard"
         android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_dashboard"/>
+        android:title="Платежи"/>
 
     <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/title_notifications"/>
+        android:id="@+id/navigation_history"
+        android:icon="@drawable/ic_history_black_24dp"
+        android:title="История"/>
+
+    <item
+        android:id="@+id/navigation_exchange_rates"
+        android:icon="@drawable/ic_dollar"
+        android:title="Курсы валют"/>
+    <item
+        android:id="@+id/navigation_map"
+        android:icon="@drawable/ic_pin_drop_black_24dp"
+        android:title="Мы на карте"/>
 
 </menu>

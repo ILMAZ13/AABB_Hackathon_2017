@@ -1,21 +1,37 @@
 package ru.hackathon.aabb.advancedakbarsbank.model.entity.foruser;
 
-import java.util.Date;
-import java.util.List;
-
 import ru.hackathon.aabb.advancedakbarsbank.model.entity.gettings.SimpleTransactionGetting;
-import ru.hackathon.aabb.advancedakbarsbank.model.enums.TransactionTypeEnum;
 import ru.hackathon.aabb.advancedakbarsbank.model.interfaces.Payment;
 import ru.hackathon.aabb.advancedakbarsbank.model.interfaces.Transaction;
 
+import java.util.Date;
+import java.util.List;
+
 public class Card {
-    private User user;
+    private String cardName;
     private long cardNumber;
     private Date expirationDate;
     private int cvv;
     private List<Transaction> transactionList;
     private List<Payment> paymentList;
     private List<SimpleTransactionGetting> gettingList;
+    private long resources;
+
+    public void setResources(long resources) {
+        this.resources = resources;
+    }
+
+    public long getResources() {
+        return resources;
+    }
+
+    public void setCardName(String cardName) {
+        this.cardName = cardName;
+    }
+
+    public String getCardName() {
+        return cardName;
+    }
 
     public List<SimpleTransactionGetting> getGettingList() {
         return gettingList;
@@ -39,14 +55,6 @@ public class Card {
 
     public void setPaymentList(List<Payment> paymentList) {
         this.paymentList = paymentList;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 
     public long getCardNumber() {
@@ -73,11 +81,11 @@ public class Card {
         this.cvv = cvv;
     }
 
-    public void transactionAdding(Transaction transaction) {
-        transactionList.add(transaction);
-        if(transaction.getTransactionTypeEnum().equals(TransactionTypeEnum.PAYMENT))
-            paymentList.add((Payment) transaction);
-        if(transaction.getTransactionTypeEnum().equals(TransactionTypeEnum.GETTING))
-            gettingList.add((SimpleTransactionGetting)transaction);
-    }
+//    public void transactionAdding(Transaction transaction) {
+//        transactionList.add(transaction);
+//        if(transaction.getTransactionTypeEnum().equals(TransactionTypeEnum.PAYMENT))
+//            paymentList.add((Payment) transaction);
+//        if(transaction.getTransactionTypeEnum().equals(TransactionTypeEnum.GETTING))
+//            gettingList.add((SimpleTransactionGetting)transaction);
+//    }
 }
