@@ -1,15 +1,15 @@
 package ru.hackathon.aabb.advancedakbarsbank.model.service;
 
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
+
 import ru.hackathon.aabb.advancedakbarsbank.model.entity.gettings.SimpleTransactionGetting;
 import ru.hackathon.aabb.advancedakbarsbank.model.entity.payments.FoodPayments;
 import ru.hackathon.aabb.advancedakbarsbank.model.entity.payments.OtherPayments;
 import ru.hackathon.aabb.advancedakbarsbank.model.entity.payments.UtilitiesPayments;
 import ru.hackathon.aabb.advancedakbarsbank.model.interfaces.Payment;
 import ru.hackathon.aabb.advancedakbarsbank.model.interfaces.Transaction;
-
-import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.List;
 
 public class TransactionsPlug {
     private final Timestamp FIRST_TIMESTAMP = Timestamp.valueOf("2017-03-03 10:10:10.0");
@@ -22,6 +22,8 @@ public class TransactionsPlug {
 //    private List<SimpleTransactionGetting> gettings = new ArrayList<>();
 
     public List<Transaction> getTransactions() {
+        addPayments();
+        addGettings();
         return transactions;
     }
 

@@ -62,16 +62,21 @@ public class HomeCardViewHolder extends RecyclerView.ViewHolder {
             }
         });
         GraphView graph = (GraphView) itemView.findViewById(R.id.card_graph);
-        DataPoint[] dataPoints = new DataPoint[card.getTransactionList().size()];
-        int i = 0;
-        long cardResourses = card.getResources();
+        DataPoint[] dataPoints = new DataPoint[card.getTransactionList().size()+1];
+        int i = card.getTransactionList().size();
+        long cardResources = card.getResources();
+        dataPoints[i] = new DataPoint(i, cardResources);
+        i--;
         for (Transaction t :
                card.getTransactionList() ) {
-            if(t.getTransactionTypeEnum().equals(TransactionTypeEnum.GETTING))
-                dataPoints[i] = new DataPoint(new java.sql.Date(t.getTransactionDateAndTime().getTime()), cardResourses - t.getCost());
-            else
-                dataPoints[i] = new DataPoint(new java.sql.Date(t.getTransactionDateAndTime().getTime()), cardResourses + t.getCost());
-            i++;
+            if(t.getTransactionTypeEnum().equals(TransactionTypeEnum.GETTING)) {
+                cardResources -= t.getCost();
+            }
+            else {
+                cardResources += t.getCost();
+            }
+            dataPoints[i] = new DataPoint(i, cardResources);
+            i--;
         }
         LineGraphSeries<DataPoint> series = new LineGraphSeries<>(dataPoints);
         graph.addSeries(series);
