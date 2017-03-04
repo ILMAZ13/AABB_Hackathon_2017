@@ -1,15 +1,13 @@
 package ru.hackathon.aabb.advancedakbarsbank.model.entity.foruser;
 
-import java.util.Date;
-import java.util.List;
-
 import ru.hackathon.aabb.advancedakbarsbank.model.entity.gettings.SimpleTransactionGetting;
-import ru.hackathon.aabb.advancedakbarsbank.model.enums.TransactionTypeEnum;
 import ru.hackathon.aabb.advancedakbarsbank.model.interfaces.Payment;
 import ru.hackathon.aabb.advancedakbarsbank.model.interfaces.Transaction;
 
+import java.util.Date;
+import java.util.List;
+
 public class Card {
-    private User user;
     private long cardNumber;
     private Date expirationDate;
     private int cvv;
@@ -41,14 +39,6 @@ public class Card {
         this.paymentList = paymentList;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
     public long getCardNumber() {
         return cardNumber;
     }
@@ -73,11 +63,11 @@ public class Card {
         this.cvv = cvv;
     }
 
-    public void transactionAdding(Transaction transaction) {
-        transactionList.add(transaction);
-        if(transaction.getTransactionTypeEnum().equals(TransactionTypeEnum.PAYMENT))
-            paymentList.add((Payment) transaction);
-        if(transaction.getTransactionTypeEnum().equals(TransactionTypeEnum.GETTING))
-            gettingList.add((SimpleTransactionGetting)transaction);
-    }
+//    public void transactionAdding(Transaction transaction) {
+//        transactionList.add(transaction);
+//        if(transaction.getTransactionTypeEnum().equals(TransactionTypeEnum.PAYMENT))
+//            paymentList.add((Payment) transaction);
+//        if(transaction.getTransactionTypeEnum().equals(TransactionTypeEnum.GETTING))
+//            gettingList.add((SimpleTransactionGetting)transaction);
+//    }
 }

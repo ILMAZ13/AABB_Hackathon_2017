@@ -2,13 +2,13 @@ package ru.hackathon.aabb.advancedakbarsbank.model.interfaces;
 
 import ru.hackathon.aabb.advancedakbarsbank.model.enums.TransactionTypeEnum;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 public abstract class Transaction {
     private TransactionTypeEnum transactionTypeEnum;
     private String transactionName;
     private Timestamp transactionDateAndTime;
-    private long money;
+    private long cost;
 
     public String getTransactionName() {
         return transactionName;
@@ -34,11 +34,11 @@ public abstract class Transaction {
         this.transactionDateAndTime = transactionDateAndTime;
     }
 
-    public long getMoney() {
-        return money;
+    public long getCost() {
+        return cost;
     }
 
-    public void setMoney(long money) {
-        this.money = money;
+    public void setCost(long cost) {
+        this.cost = cost;
     }
 }
