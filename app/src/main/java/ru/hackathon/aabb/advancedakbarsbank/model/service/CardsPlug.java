@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 public class CardsPlug {
-    List<Card> getCards() {
+    public List<Card> getCards() {
         List<Card> cards = new ArrayList<>();
         TransactionsPlug transactionsPlug = new TransactionsPlug();
 
@@ -33,11 +33,4 @@ public class CardsPlug {
         return cards;
     }
 
-//
-//    private long cardNumber;
-//    private Date expirationDate;
-//    private int cvv;
-//    private List<Transaction> transactionList;
-//    private List<Payment> paymentList;
-//    private List<SimpleTransactionGetting> gettingList;
 }
