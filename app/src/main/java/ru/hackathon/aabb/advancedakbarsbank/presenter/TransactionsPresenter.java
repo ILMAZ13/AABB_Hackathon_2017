@@ -13,7 +13,7 @@ public class TransactionsPresenter {
     private Card card;
     private List<Transaction> transactionList;
     private List<Payment> paymentsList;
-    private long paymentSumm;
+    private long paymentSumm=0;
 
     public TransactionsPresenter(Card card){
         this.card = card;
