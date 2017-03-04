@@ -24,9 +24,16 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_dashboard:
 
                     return true;
-                case R.id.navigation_notifications:
+                case R.id.navigation_history:
 
                     return true;
+                case R.id.navigation_map:
+
+                    return true;
+                case R.id.navigation_exchange_rates:
+
+                    return true;
+
             }
             return false;
         }

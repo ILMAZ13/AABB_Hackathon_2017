@@ -3,7 +3,6 @@ package ru.hackathon.aabb.advancedakbarsbank.view.viewHolders;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -24,7 +23,6 @@ public class HomeCardViewHolder extends RecyclerView.ViewHolder {
     private TextView mCardName;
     private TextView mCardNumber;
     private TextView mCardResource;
-    private ImageView mExpandImageView;
     private LinearLayout mLinearLayout;
     private Button mButtonFill;
     private Button mButtonPayments;
@@ -36,7 +34,6 @@ public class HomeCardViewHolder extends RecyclerView.ViewHolder {
         mCardName = (TextView) itemView.findViewById(R.id.tv_card_name);
         mCardNumber = (TextView) itemView.findViewById(R.id.tv_card_num);
         mCardResource = (TextView) itemView.findViewById(R.id.tv_card_resource);
-        mExpandImageView = (ImageView) itemView.findViewById(R.id.iv_expand);
         mButtonFill = (Button) itemView.findViewById(R.id.btn_fill_card);
         mButtonBlock = (Button) itemView.findViewById(R.id.btn_block);
         mButtonPayments = (Button) itemView.findViewById(R.id.btn_payments);
@@ -49,7 +46,7 @@ public class HomeCardViewHolder extends RecyclerView.ViewHolder {
         String temp = "***" + card.getCardNumber() % 10000;
         mCardNumber.setText(temp);
         mCardResource.setText(card.getResources() + "RUB");
-        mExpandImageView.setOnClickListener(new View.OnClickListener() {
+        itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(expanded){

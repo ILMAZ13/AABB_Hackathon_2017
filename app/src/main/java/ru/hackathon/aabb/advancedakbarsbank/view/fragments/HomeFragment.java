@@ -1,6 +1,7 @@
 package ru.hackathon.aabb.advancedakbarsbank.view.fragments;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,11 +9,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toolbar;
 
 import ru.hackathon.aabb.advancedakbarsbank.R;
 import ru.hackathon.aabb.advancedakbarsbank.model.entity.foruser.User;
 import ru.hackathon.aabb.advancedakbarsbank.presenter.HomePresenter;
+import ru.hackathon.aabb.advancedakbarsbank.view.activities.SearchActivity;
 import ru.hackathon.aabb.advancedakbarsbank.view.adapters.CardListAdapter;
 import ru.hackathon.aabb.advancedakbarsbank.view.interfaces.HomeFragmentInterface;
 
@@ -26,6 +30,8 @@ public class HomeFragment extends Fragment implements HomeFragmentInterface {
     private RecyclerView mRecyclerView;
     private CardListAdapter mAdapter;
     private HomePresenter mPresenter;
+    private TextView mUserName;
+    private ImageView mSearchImageView;
 
     public static HomeFragment newInstance() {
 
@@ -48,6 +54,15 @@ public class HomeFragment extends Fragment implements HomeFragmentInterface {
         mAdapter = new CardListAdapter();
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.setAdapter(mAdapter);
+        mUserName = (TextView) view.findViewById(R.id.tv_user_name);
+        mSearchImageView = (ImageView) view.findViewById(R.id.iv_search);
+        mSearchImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SearchActivity.class);
+                startActivity(intent);
+            }
+        });
         mPresenter.getUserInformation();
         return view;
     }
@@ -62,5 +77,6 @@ public class HomeFragment extends Fragment implements HomeFragmentInterface {
     public void setUserInformation(User user) {
         mUser = user;
         mAdapter.setCardList(mUser.getCardList());
+        mUserName.setText(mUser.getFirstName() + " " + mUser.getLastName());
     }
 }
