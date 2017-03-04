@@ -1,6 +1,7 @@
 package ru.hackathon.aabb.advancedakbarsbank.view.activities;
 
 import android.app.DialogFragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -84,6 +85,8 @@ public class AuthorizationActivity extends AppCompatActivity implements Authoriz
 
     @Override
     public void success() {
-
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

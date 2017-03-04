@@ -1,22 +1,27 @@
 package ru.hackathon.aabb.advancedakbarsbank.model.service;
 
-import ru.hackathon.aabb.advancedakbarsbank.model.enums.TransactionTypeEnum;
+import java.util.List;
+
+import ru.hackathon.aabb.advancedakbarsbank.model.entity.foruser.Card;
+import ru.hackathon.aabb.advancedakbarsbank.model.entity.gettings.SimpleTransactionGetting;
 import ru.hackathon.aabb.advancedakbarsbank.model.interfaces.Payment;
 import ru.hackathon.aabb.advancedakbarsbank.model.interfaces.Transaction;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Service {
-    private List<Transaction> transactions= new ArrayList<>();
-    private List<Payment> payments = new ArrayList<>();
+    private List<Transaction> transactions;
+    private List<Payment> payments;
+    private List<SimpleTransactionGetting> gettingList;
 
-    public void setTransactions(List<Transaction> transactions) {
-        this.transactions = transactions;
+    public void setTransactions(Card card) {
+        this.transactions = card.getTransactionList();
     }
 
-    public void setPayments(List<Payment> payments) {
-        this.payments = payments;
+    public void setPayments(Card card) {
+        this.payments = card.getPaymentList();
+    }
+
+    public void setGettingList(Card card){
+        this.gettingList = card.getGettingList();
     }
 
     public List<Transaction> getTransactions() {
@@ -27,9 +32,7 @@ public class Service {
         return payments;
     }
 
-    public void transactionAdding(Transaction transaction) {
-        transactions.add(transaction);
-        if(transaction.getTransactionTypeEnum().equals(TransactionTypeEnum.PAYMENT))
-            payments.add((Payment) transaction);
+    public List<SimpleTransactionGetting> getGettingList() {
+        return gettingList;
     }
 }
