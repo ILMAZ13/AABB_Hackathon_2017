@@ -21,6 +21,8 @@ public class HomeFragment extends Fragment implements HomeFragmentInterface {
         return fragment;
     }
 
+
+
     @Override
     public void setUserInformation(User user) {
         mUser = user;
