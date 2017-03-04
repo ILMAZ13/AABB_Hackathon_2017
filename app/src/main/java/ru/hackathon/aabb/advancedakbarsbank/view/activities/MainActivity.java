@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 import ru.hackathon.aabb.advancedakbarsbank.R;
+import ru.hackathon.aabb.advancedakbarsbank.view.fragments.HistoryFragment;
 import ru.hackathon.aabb.advancedakbarsbank.view.fragments.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,7 +26,10 @@ public class MainActivity extends AppCompatActivity {
 
                     return true;
                 case R.id.navigation_history:
-
+                    Fragment fragment = HistoryFragment.newInstance();
+                    getFragmentManager().beginTransaction()
+                            .replace(R.id.content, fragment)
+                            .commit();
                     return true;
                 case R.id.navigation_map:
 

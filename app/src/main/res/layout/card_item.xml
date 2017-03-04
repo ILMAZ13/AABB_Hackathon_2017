@@ -71,41 +71,51 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:orientation="vertical"
-                android:visibility="gone">
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <com.jjoe64.graphview.GraphView
+                    android:id="@+id/card_graph"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dip"
+                    android:layout_marginTop="8dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
 
                     <Button
                         android:id="@+id/btn_fill_card"
+                        style="@style/Widget.AppCompat.Button.Borderless.Colored"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Пополнить карту"/>
+                        android:text="Пополнить карту"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorPrimary"
+                        />
 
                     <Button
                         android:id="@+id/btn_payments"
+                        style="@style/Widget.AppCompat.Button.Borderless.Colored"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Платежи и переводы"/>
+                        android:text="Платежи и переводы"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorPrimary"
+                        />
 
                     <Button
                         android:id="@+id/btn_block"
+                        style="@style/Widget.AppCompat.Button.Borderless.Colored"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="заблокировать"/>
+                        android:text="Заблокировать карту"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorPrimary"
+                        />
 
                 </LinearLayout>
-
-                <com.jjoe64.graphview.GraphView
-                    android:layout_marginTop="8dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dip"
-                    android:id="@+id/card_graph" />
 
             </LinearLayout>
 
