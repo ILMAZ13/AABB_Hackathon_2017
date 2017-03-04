@@ -13,6 +13,7 @@ import com.jjoe64.graphview.series.LineGraphSeries;
 
 import ru.hackathon.aabb.advancedakbarsbank.R;
 import ru.hackathon.aabb.advancedakbarsbank.model.entity.foruser.Card;
+import ru.hackathon.aabb.advancedakbarsbank.model.enums.TransactionTypeEnum;
 import ru.hackathon.aabb.advancedakbarsbank.model.interfaces.Transaction;
 
 /**
@@ -63,9 +64,13 @@ public class HomeCardViewHolder extends RecyclerView.ViewHolder {
         GraphView graph = (GraphView) itemView.findViewById(R.id.card_graph);
         DataPoint[] dataPoints = new DataPoint[card.getTransactionList().size()];
         int i = 0;
+        long cardResourses = card.getResources();
         for (Transaction t :
                card.getTransactionList() ) {
-            dataPoints[i] = new DataPoint(new java.sql.Date(t.getTransactionDateAndTime().getTime()), t.getCost());
+            if(t.getTransactionTypeEnum().equals(TransactionTypeEnum.GETTING))
+                dataPoints[i] = new DataPoint(new java.sql.Date(t.getTransactionDateAndTime().getTime()), cardResourses - t.getCost());
+            else
+                dataPoints[i] = new DataPoint(new java.sql.Date(t.getTransactionDateAndTime().getTime()), cardResourses + t.getCost());
             i++;
         }
         LineGraphSeries<DataPoint> series = new LineGraphSeries<>(dataPoints);
