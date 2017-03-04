@@ -17,6 +17,12 @@ public class TransactionsPlug {
     private final Timestamp THIRD_TIMESTAMP = Timestamp.valueOf("2017-04-05 10:10:10.0");
     private final Timestamp FOURTH_TIMESTAMP = Timestamp.valueOf("2017-04-06 10:10:10.0");
     private final Timestamp FITH_TIMESTAMP = Timestamp.valueOf("2017-04-07 10:10:10.0");
+    private final Timestamp SIXTH_TIMESTAMP = Timestamp.valueOf("2017-04-08 10:10:10.0");
+    private final Timestamp SEVENTH_TIMESTAMP = Timestamp.valueOf("2017-04-09 10:10:10.0");
+    private final Timestamp EIGHTH_TIMESTAMP = Timestamp.valueOf("2017-04-10 10:10:10.0");
+    private final Timestamp NINETH_TIMESTAMP = Timestamp.valueOf("2017-04-11 10:10:10.0");
+    private final Timestamp TENTH_TIMESTAMP = Timestamp.valueOf("2017-04-12 10:10:10.0");
+    private final Timestamp ELEVENTH_TIMESTAMP = Timestamp.valueOf("2017-04-13 10:10:10.0");
     private List<Transaction> transactions = new ArrayList<>();
     private List<Payment> payments = new ArrayList<>();
 //    private List<SimpleTransactionGetting> gettings = new ArrayList<>();
@@ -54,6 +60,27 @@ public class TransactionsPlug {
         fithTransaction.setTransactionDateAndTime(FITH_TIMESTAMP);
         transactions.add(fithTransaction);
         payments.add((Payment) fithTransaction);
+
+        Transaction sixthTransaction = new FoodPayments();
+        sixthTransaction.setCost(2000);
+        sixthTransaction.setTransactionName("ATAK");
+        sixthTransaction.setTransactionDateAndTime(SIXTH_TIMESTAMP);
+        transactions.add(sixthTransaction);
+        payments.add((Payment) sixthTransaction);
+
+        Transaction seventhTransaction = new OtherPayments();
+        seventhTransaction.setCost(1200);
+        seventhTransaction.setTransactionName("OSTIN");
+        seventhTransaction.setTransactionDateAndTime(SEVENTH_TIMESTAMP);
+        transactions.add(seventhTransaction);
+        payments.add((Payment) seventhTransaction);
+
+        Transaction eigthTransaction = new UtilitiesPayments();
+        eigthTransaction.setCost(200);
+        eigthTransaction.setTransactionName("SOCKS");
+        eigthTransaction.setTransactionDateAndTime(EIGHTH_TIMESTAMP);
+        transactions.add(eigthTransaction);
+        payments.add((Payment) eigthTransaction);
     }
 
     public void addGettings(){
@@ -68,5 +95,23 @@ public class TransactionsPlug {
         secondTransactionGetting.setCost(1000);
         secondTransactionGetting.setTransactionDateAndTime(SECOND_TIMESTAMP);
         transactions.add(secondTransactionGetting);
+
+        Transaction ninethTransactionGetting = new SimpleTransactionGetting();
+        ninethTransactionGetting.setTransactionName("pension");
+        ninethTransactionGetting.setCost(4000);
+        ninethTransactionGetting.setTransactionDateAndTime(NINETH_TIMESTAMP);
+        transactions.add(ninethTransactionGetting);
+
+        Transaction tenthTransactionGetting = new SimpleTransactionGetting();
+        tenthTransactionGetting.setTransactionName("second salary");
+        tenthTransactionGetting.setCost(20000);
+        tenthTransactionGetting.setTransactionDateAndTime(TENTH_TIMESTAMP);
+        transactions.add(tenthTransactionGetting);
+
+        Transaction eleventhTransactionGetting = new SimpleTransactionGetting();
+        eleventhTransactionGetting.setTransactionName("second pension");
+        eleventhTransactionGetting.setCost(3900);
+        eleventhTransactionGetting.setTransactionDateAndTime(ELEVENTH_TIMESTAMP);
+        transactions.add(eleventhTransactionGetting);
     }
 }

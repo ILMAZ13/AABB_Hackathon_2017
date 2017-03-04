@@ -78,6 +78,7 @@ public class HomeCardViewHolder extends RecyclerView.ViewHolder {
             dataPoints[i] = new DataPoint(i, cardResources);
             i--;
         }
+
         LineGraphSeries<DataPoint> series = new LineGraphSeries<>(dataPoints);
         graph.addSeries(series);
         graph.getViewport().setScrollable(true); // enables horizontal scrolling
